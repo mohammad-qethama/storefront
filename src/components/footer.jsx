@@ -6,7 +6,7 @@ export default function footer(props) {
     <div>
       <footer>
         <p>
-          &copy; All rights are wasted 
+          &copy; All rights reserved
         </p>
       </footer>
     </div>
