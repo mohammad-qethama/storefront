@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import {connect} from 'react-redux';
 
 import {activeCategory} from '../store/catagories';
@@ -7,15 +7,17 @@ import {filter,restore} from '../store/products';
 
 
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import './categories.css';
 
 
 const Counter = (props)=>{
 
 
-  
+  useEffect(()=>props.restore(),[])
 
   return(
     <section>
+      
          <Breadcrumbs aria-label="breadcrumb">
            <ul>
         <li onClick={()=>{props.activeCategory('all');props.restore()} }> ALL </li>

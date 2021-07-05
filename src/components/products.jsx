@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from 'react-redux';
+import {decrement} from '../store/products';
 import { makeStyles } from '@material-ui/core/styles';
+import {If,Then,Else} from 'react-if';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -24,11 +26,16 @@ const useStyles = makeStyles({
 
 const Counter = (props)=>{
   const classes = useStyles();
+  
 
   return (
     <div className='cards'>
     {props.products.products.map(product => {
-    return (<Card className={classes.root} key={product.name}>
+    return (
+    
+    <If condition = {product.visible && product.inventoryCount} key={product.name}>
+    <Then>
+    <Card className={classes.root} key={product.name}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -48,14 +55,21 @@ const Counter = (props)=>{
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
+        <Button size="small" color="primary" onClick={()=>{ props.decrement(product)}} >
+          Add To Cart
         </Button>
         <Button size="small" color="primary">
-        Add To Cart
+        Details      
         </Button>
       </CardActions>
-    </Card>)
+    </Card>
+    </Then>
+    <Else>
+      <></>
+    </Else>
+    </If>
+    
+    )
   
  })}
  </div>
@@ -86,6 +100,7 @@ const mapStateToProps = state =>({
   products: state.product
 })
 
+const mapDispatchToProps = {decrement} ;
 
-export default connect(mapStateToProps)(Counter)
+export default connect( mapStateToProps,mapDispatchToProps )(Counter)
 
