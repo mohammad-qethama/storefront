@@ -1,4 +1,4 @@
-const initialState = {
+let initialState = {
   products:[
     {
       category: 'Ele',
@@ -50,6 +50,7 @@ const initialState = {
   ]
 }
 
+// initialState = initialState.products.map(product =>  Object.assign({},product,{visible:true}));
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState,action)=>{
   // eslint-disable-next-line no-unused-vars
@@ -57,13 +58,27 @@ export default (state = initialState,action)=>{
   switch (type) {
     case 'FILTER_CATEGORY':
       // state = initialState;
-      let shownList= initialState.products.filter(product => product.category === payload);
-      console.log(shownList);
+    
+
+      let shownList= state.products.map(product => (product.category === payload)?Object.assign({},product,{visible:true}) : Object.assign({},product,{visible:false}) );
       return  {products:shownList};
     case 'SHOW_ALL':
-      return initialState;
+      let listShown = state.products.map(product =>  Object.assign({},product,{visible:true}));
+      return  {products:listShown};
       
-    
+    case 'INCREMENT':
+      let updatedListINC = state.products.map(product=>{
+        return (product.name === payload.name)? product.inventoryCount = product.inventoryCount+1: product; 
+      })
+      return {products: updatedListINC};
+      
+
+    case 'DECREMENT':
+      let updatedListDec = state.products.map(product=>{
+        return ((product.name === payload.name) )?  Object.assign({},product,{inventoryCount: product.inventoryCount-1}) : product; 
+      })
+      return {products: updatedListDec};
+
   
     default:
     return state;
@@ -81,6 +96,16 @@ export let filter = (category) =>({
 
 export let restore = () => ({
    type: 'SHOW_ALL',
+})
+
+export let increment = (product) =>({
+  type:'INCREMENT',
+  payload:product  
+})
+
+export let decrement = (payload) => ({
+  type: 'DECREMENT',
+  payload:payload
 })
 
 

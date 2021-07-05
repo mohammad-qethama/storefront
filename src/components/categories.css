@@ -1,0 +1,7 @@
+li{
+  color: blue;
+  
+}
+li::selection{
+  color:red;
+}
