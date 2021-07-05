@@ -2,7 +2,7 @@
 
 ## Author: Mohammad Quthama
 
-- [submission PR](https://github.com/mohammad-qethama/storefront/pull/1)
+- [submission PR](https://github.com/mohammad-qethama/storefront/pull/2)
 - [master-deployment](https://stoic-pare-ded9fc.netlify.app/)
 
 ### Setup
@@ -20,6 +20,8 @@
 - redux 
 - react-Redux
 - react-devtools-extension
+- @material-ui/icons
+- react-if
 
 
 #### Devdependencies
@@ -34,4 +36,4 @@
 
 #### UML
 
-![UML Diagram](weareDoomed.jpg)
+![UML Diagram](sw.jpg)
