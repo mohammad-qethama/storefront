@@ -2,8 +2,8 @@
 
 ## Author: Mohammad Quthama
 
-- [submission PR](https://github.com/mohammad-qethama/storefront/pull/2)
-- [master-deployment](https://stoic-pare-ded9fc.netlify.app/)
+- [submission PR](https://github.com/mohammad-qethama/storefront/pull/3)
+- [master-deployment](https://frosty-heisenberg-98720d.netlify.app/)
 
 ### Setup
 
@@ -22,8 +22,8 @@
 - react-devtools-extension
 - @material-ui/icons
 - react-if
-
-
+- redux-thunk
+- axios
 #### Devdependencies
 
 - eslint
@@ -36,4 +36,4 @@
 
 #### UML
 
-![UML Diagram](sw.jpg)
+![UML Diagram](we.jpg)
