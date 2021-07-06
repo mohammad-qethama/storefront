@@ -2,8 +2,10 @@ import React from "react";
 import {useSelector,useDispatch} from 'react-redux';
 import {Button,Menu,MenuItem} from '@material-ui/core';
 import {showCart} from '../store/cart';
+import {putItems} from '../store/actions';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
-
+import DeleteIcon from '@material-ui/icons/Delete';
+import './simpleCart.css';
 
 const SimpleCart = (props)=>{
   const state = useSelector(state =>{
@@ -19,7 +21,10 @@ const SimpleCart = (props)=>{
  const handelClose = (event) =>{
   dispatch(showCart(null))
  }
-  
+ const handelRemove = (event)=>{
+  console.log(event.currentTarget)
+  dispatch(putItems(event.currentTarget.id,true))
+ }
   return(
     <div>
     <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handelClick}>
@@ -33,7 +38,8 @@ const SimpleCart = (props)=>{
       onClose={handelClose}
     >
     { state.cartItems.products.map(product =>
-      <MenuItem  onClick={handelClose}> {product.name}  ( {product.cartCount} )</MenuItem>)
+      
+      <MenuItem className='mT'  > <span>{product.item} </span> <span> ({product.cartCount})</span> <span className='smT' onClick={handelRemove} id={product._id}><DeleteIcon/></span> </MenuItem>)
       }
 
     </Menu>
