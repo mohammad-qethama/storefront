@@ -1,4 +1,4 @@
-# LAB - Class:28
+# LAB - Class:38 : StoreFront
 
 ## Author: Mohammad Quthama
 
