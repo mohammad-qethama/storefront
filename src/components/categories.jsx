@@ -1,19 +1,35 @@
 import React,{useEffect} from "react";
+
 import {connect} from 'react-redux';
 
 import {activeCategory} from '../store/catagories';
 
 import {filter,restore} from '../store/products';
 
+import{getProducts} from '../store/actions';
 
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+
 import './categories.css';
 
 
 const Counter = (props)=>{
 
+  // const handelSubmit = (event) =>{
+  //   event.preventDefault();
+  //   props.putItems({
+    
+  //     inventory: 5,
+     
+  //   },"60e459c36e5daf0015e2f6b0" )
+  // }
 
-  useEffect(()=>props.restore(),[])
+  
+  useEffect(()=> {
+    function mad(){props.getProducts()};
+
+    mad();
+  },[])
 
   return(
     <section>
@@ -39,7 +55,7 @@ const mapStateToProps = state =>({
   categories: state.category
 })
 
-const mapDispatchToProps = {activeCategory,filter,restore} ;
+const mapDispatchToProps = {activeCategory,filter,restore,getProducts }  ;
 
 export default connect(mapStateToProps,mapDispatchToProps)(Counter)
 

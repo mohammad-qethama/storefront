@@ -1,7 +1,7 @@
 
 
 const initialState = {
-  categories:[{name:'Ele',displayName:'Electronics',description:'most modern reliable electronics'}
+  categories:[{name:'electronics',displayName:'Electronics',description:'most modern reliable electronics'}
   ,{name:'food',displayName:'Food',description:'Delicious Food with a lot of nutrition\'s'}],
   activeCategory:'all'
 };
