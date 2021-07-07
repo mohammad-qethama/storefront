@@ -1,9 +1,9 @@
-# LAB - Class:28
+# LAB - Class: 39
 
 ## Author: Mohammad Quthama
 
-- [submission PR](https://github.com/mohammad-qethama/storefront/pull/3)
-- [master-deployment](https://frosty-heisenberg-98720d.netlify.app/)
+- [submission PR](https://github.com/mohammad-qethama/storefront/pull/4)
+- [master-deployment](https://optimistic-goldstine-59634a.netlify.app/cart)
 
 ### Setup
 
@@ -24,6 +24,7 @@
 - react-if
 - redux-thunk
 - axios
+- @reduxjs/toolkit
 
 #### Devdependencies
 
