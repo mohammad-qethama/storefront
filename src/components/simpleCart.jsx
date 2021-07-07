@@ -4,8 +4,10 @@ import {Button,Menu,MenuItem} from '@material-ui/core';
 import {showCart} from '../store/cart';
 import {putItems} from '../store/actions';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
+import {Link} from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 import './simpleCart.css';
+
 
 const SimpleCart = (props)=>{
   const state = useSelector(state =>{
@@ -30,6 +32,12 @@ const SimpleCart = (props)=>{
     <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handelClick}>
     <ShoppingCartIcon/> {state.cartItems.cartItems}
     </Button>
+    <Button>
+      <Link to='/cart'>
+      
+      Cart Page
+      </Link>
+    </Button>
     <Menu
       id="simple-menu"
       anchorEl={state.cartItems.showList}
@@ -39,7 +47,7 @@ const SimpleCart = (props)=>{
     >
     { state.cartItems.products.map(product =>
       
-      <MenuItem className='mT'  > <span>{product.item} </span> <span> ({product.cartCount})</span> <span className='smT' onClick={handelRemove} id={product._id}><DeleteIcon/></span> </MenuItem>)
+      <MenuItem className='mT'  key={product._id} > <span>{product.item} </span> <span> ({product.cartCount})</span> <span className='smT' onClick={handelRemove} id={product._id}><DeleteIcon/></span> </MenuItem>)
       }
 
     </Menu>

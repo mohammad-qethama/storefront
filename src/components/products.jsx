@@ -11,6 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {putItems} from '../store/actions.js';
+import {Link} from 'react-router-dom';
 import './products.css';
 
 const useStyles = makeStyles({
@@ -70,8 +71,8 @@ const Counter = (props)=>{
         <Button size="small" color="primary" onClick={()=>{ props.putItems(product._id)}} >
           Add To Cart
         </Button>
-        <Button size="small" color="primary">
-        Details      
+        <Button size="small" color="primary" >
+         <Link to= {`/product/${product._id}`}> VIEW DETAILS </Link>    
         </Button>
       </CardActions>
     </Card>

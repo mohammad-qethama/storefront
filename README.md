@@ -24,6 +24,7 @@
 - react-if
 - redux-thunk
 - axios
+
 #### Devdependencies
 
 - eslint
