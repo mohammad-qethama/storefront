@@ -1,9 +1,9 @@
-# LAB - Class:28
+# LAB - Class: 39
 
 ## Author: Mohammad Quthama
 
-- [submission PR](https://github.com/mohammad-qethama/storefront/pull/1)
-- [master-deployment](https://stoic-pare-ded9fc.netlify.app/)
+- [submission PR](https://github.com/mohammad-qethama/storefront/pull/4)
+- [master-deployment](https://optimistic-goldstine-59634a.netlify.app/cart)
 
 ### Setup
 
@@ -20,7 +20,11 @@
 - redux 
 - react-Redux
 - react-devtools-extension
-
+- @material-ui/icons
+- react-if
+- redux-thunk
+- axios
+- @reduxjs/toolkit
 
 #### Devdependencies
 
@@ -34,4 +38,4 @@
 
 #### UML
 
-![UML Diagram](weareDoomed.jpg)
+![UML Diagram](we.jpg)

@@ -1,0 +1,14 @@
+.mT{
+  min-width: 250px;
+  display:flex;
+  justify-content:space-evenly;
+
+}
+
+.smT{
+  padding:20;
+  color:red;
+  font-weight: 700;
+
+  
+}

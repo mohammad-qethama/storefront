@@ -22,7 +22,7 @@ export default (state = initialState,action)=>{
          }else{
 
           newState =  state.products.map(product=>{
-            if (product.name === payload.name)
+            if (product.item === payload.item)
              { 
               isUpdated = true; 
               return Object.assign({}
@@ -49,7 +49,10 @@ export default (state = initialState,action)=>{
       return Object.assign({}
          ,state
           ,{showList:payload })
-    
+
+    case 'REMOVE_FROM_CART':
+      let newList = state.products.filter(product => product._id !== payload._id)
+      return {products:newList,cartItems:state.cartItems-payload.cartCount,showList:state.showList}
     default:
       return state;
       
